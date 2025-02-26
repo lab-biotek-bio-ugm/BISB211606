@@ -1,8 +1,7 @@
-name: bic30007-2022-acara2
+name: BISB211606
 channels:
   - conda-forge
   - bioconda
-  - defaults
 dependencies:
   - biopython
   - emboss
