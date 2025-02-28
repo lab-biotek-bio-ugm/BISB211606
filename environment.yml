@@ -5,3 +5,4 @@ channels:
 dependencies:
   - biopython
   - emboss
+  - jupyterlab
