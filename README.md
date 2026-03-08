@@ -49,4 +49,4 @@ Once your codespace is ready, follow these steps:
 
 6. If it ask for the password or token, input the key shown at the terminal. On the example above, the token is = `a1465447bdfea61395e2610c41c90a20ac0d85b3eca05cfb`
 
-7. > PS: You can also run the notebooks directly from the VS Code interface, but you need to install the right plugin and fight the right kernel
+7. > PS: You can also run the notebooks directly from the VS Code interface, but you need to install the right plugin and find the right kernel
