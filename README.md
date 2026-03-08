@@ -1,63 +1,52 @@
-# BIC30007-2 - Acara 2
-See the main [README.md](../README.md) for general instructions.
+# BISB211606 - Sequence Alignment Fundamentals, Algorithm, and Application
 
-## Using Google Colaboratory
-### Upload the repository to Google Drive
-The best way to run this course repository on google colab is via Google Drive.
+This repository is the companion activity for the [BISB211606 - Bioinformatics Practical Handbook](https://bisb211606.matinnu.org/) taught in the Academic Year 2025/2026 at the Undergraduate Biology Study Program, Faculty of Biology, Universitas Gadjah Mada.
 
-If you haven't so:
-- Find the latest release from: https://github.com/lab-biotek-bio-ugm/BIC30007-2/releases
-- Go to the `Assets` and download the source code (either `zip` or `tar.gz`)
-- Unzip (or untar) the source code in your local machine (laptop)
-- Upload the whole directory to Google drive
-- Open the notebook with google colab
+## Running the activity using GitHub Codespace
+Click on the button below to start a codespace using this repository as the template:
 
-### Installing dependencies
-- On the first line, create a new cell and run:
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/lab-biotek-bio-ugm/BISB211606)
 
-```python
-# install conda and mamba
-!pip install -q condacolab
-import condacolab
-condacolab.install_mambaforge() # session will crash and restart
-```
-- Setelah session restart
-```python
-import condacolab
-condacolab.check()
+You can create a new codespace or reuse existing ones.
 
-# mount drive
-from google.colab import drive
-drive.mount('/content/drive')
-```
-- Install dependencies
-```python
-# assume you have uploaded the repo to gdrive
-!mamba env update -n base -f /content/drive/MyDrive/<your downloaded release name>/acara_02/environment.yml
-```
-- Import Bio and Path
-```python
-# Import Bio
-import Bio
-from Bio import SeqIO
+Once your codespace is ready, follow these steps:
 
-# Import Path
-from pathlib import Path
-```
+1. If this is a fresh codespace, initiate conda by typing `conda init` in the terminal. It will then give you a message like this:
 
+    ```
+    ==> For changes to take effect, close and re-open your current shell. <==
+    ```
 
-- Lanjut ke bagian pengaturan folder input dan output, ganti `data_dir` sesuai path yang ada di colab. Contoh untuk notebook 02.1:
-```python
-# Set up paths
-data_dir = Path('/content/drive/MyDrive/<your downloaded release name>/acara_02/data')
-# Jika output dari data_dir.is_dir() adalah False, sesuaikan value dari data_dir dengan lokasi yang benar
-assert data_dir.is_dir(), f"Folder {data_dir} tidak ditemukan, sesuaikan value dari data_dir dengan lokasi yang benar!"
+2. Open a new shell by clicking on the `+` button on the top right corner of the terminal. If conda is successfully set up then your terminal command line will start with `(base)`. This means you are at the `base` environment.
 
-# Set up output directory
-output_dir = Path('/content/drive/MyDrive/<your downloaded release name>/acara_02/results/02.1')
-output_dir.mkdir(parents=True, exist_ok=True)
+3. Install the necessary dependencies by creating a new environment from the recipe file:
 
-# contoh penggunaan pathlib
-contoh_path = data_dir / "1st_BASE_3766078_S1_F.ab1" # menambahkan child dir atau file dengan notasi "/"
-print(contoh_path, contoh_path.is_file()) # Melakukan pengecekan apakah path yang diberikan berupa file atau bukan
-```
+    ```bash
+    conda env create -f environment.yml
+    ```
+
+4. Once the installation is complete, activate the environment with:
+
+    ```bash
+    conda activate BISB211606
+    ```
+
+5. Then you can start a jupyter session with:
+
+    ```bash
+    jupyter lab
+    ```
+
+    Then follow the instruction on the terminal, which looks something like this:
+
+    ```
+    To access the server, open this file in a browser:
+        file:/home/codespace/.local/share/jupyter/runtime/jpserver-10660-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=a1465447bdfea61395e2610c41c90a20ac0d85b3eca05cfb
+        http://127.0.0.1:8888/lab?token=a1465447bdfea61395e2610c41c90a20ac0d85b3eca05cfb
+    ```
+
+6. If it ask for the password or token, input the key shown at the terminal. On the example above, the token is = `a1465447bdfea61395e2610c41c90a20ac0d85b3eca05cfb`
+
+7. PS: You can alos run the notebooks directly from the VS Code interface, but you need to install the right plugin and fight the right kernel
